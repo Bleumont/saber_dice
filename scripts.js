@@ -23,14 +23,7 @@ function getDiceValues() {
   return values;
 }
 const normalScore = (diceValue) => {
-  switch (diceValue) {
-    case '1':
-      return 100;
-    case '5':
-      return 50;
-    default:
-      return 0;
-  }
+  return diceValue == '1' ? 100 : diceValue == '5' ? 50 : 0;
 };
 function calculateScore() {
   const [dice1, dice2, dice3] = getDiceValues();
