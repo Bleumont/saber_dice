@@ -1,12 +1,14 @@
 document.addEventListener('click', (e) => {
   const diceList = document.querySelectorAll('.dice');
+  const resultBox = document.getElementById('result');
   if (e.target.matches('#button-roll')) {
     diceList.forEach((el) => {
       el.innerHTML = roll();
       el.classList.remove('1', '2', '3', '4', '5', '6');
       el.classList.toggle(`${el.textContent}`);
     });
-    console.log(calculateScore());
+    // console.log(calculateScore());
+    resultBox.innerHTML = `You got <strong>${calculateScore()}</strong> points!`;
   }
 });
 function roll() {
@@ -20,30 +22,27 @@ function getDiceValues() {
   });
   return values;
 }
-
+const normalScore = (diceValue) => {
+  switch (diceValue) {
+    case '1':
+      return 100;
+    case '5':
+      return 50;
+    default:
+      return 0;
+  }
+};
 function calculateScore() {
-  let score = 0;
-  [dice1, dice2, dice3] = getDiceValues();
+  const [dice1, dice2, dice3] = getDiceValues();
 
-  normalScore = (diceValue) => {
-    switch (diceValue) {
-      case 1:
-        score += 100;
-        break;
-      case 5:
-        score += 50;
-        break;
-      default:
-        break;
-    }
-  };
+  let score = 0;
   [...getDiceValues()].forEach((el) => {
-    normalScore(+el.textContent);
+    score += normalScore(el);
   });
 
-  return dice1 + dice2 + dice3 == 3
+  return +dice1 + +dice2 + +dice3 == 3
     ? 1000
-    : (dice1 + dice2 + dice3) / dice1 == dice1
-    ? dice1 * 100
+    : +dice1 == +dice2 && +dice2 == +dice3
+    ? +dice1 * 100
     : score;
 }
