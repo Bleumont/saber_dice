@@ -1,15 +1,46 @@
+body {
+  font-family: Calibre, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0a192f;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: aliceblue;
+}
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .dice {
   width: 40px;
   height: 40px;
   border: 1px solid;
   margin: 5px;
   border-radius: 5px;
+  box-shadow: darkcyan;
+  background-color: whitesmoke;
 }
 
-.dice-container {
+#dice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
   background-color: darkgreen;
+  border: 1px solid black;
 }
 
-.roll-btn {
+#button-roll {
   border-radius: 5px;
+  font-weight: bold;
+  background-color: darkslateblue;
+  color: aqua;
+}
+.result-box {
+  background-color: cornflowerblue;
+}
+.container {
+  display: flex;
 }
