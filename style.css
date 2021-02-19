@@ -50,8 +50,9 @@ main {
 #button-roll {
   border-radius: 5px;
   font-weight: bold;
+  font-size: 2rem;
   height: 70px;
-  width: 70px;
+  width: 90px;
   background-color: dodgerblue;
   color: aqua;
   margin: 30px;
