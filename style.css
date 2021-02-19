@@ -19,13 +19,16 @@ main {
   margin: 5px;
   padding: 3px;
   border-radius: 5px;
-  box-shadow: darkcyan;
   background-color: whitesmoke;
   display: grid;
   grid-template:
     [row1-start] 'dice1 dice2 dice3' [row1-end]
     [row2-start] 'dice4 dice5 dice6' [row2-end]
     [row3-start] 'dice7 dice8 dice9' [row3-end];
+  transition: all 400ms ease-in-out;
+}
+.dice-rotate {
+  transform: rotate(360deg) rotateX(180deg);
 }
 .dice-point {
   background-color: black;
@@ -36,24 +39,35 @@ main {
   visibility: hidden;
 }
 #dice-container {
-  background-image: radial-gradient(rgb(13, 44, 13), darkgreen);
+  background-image: radial-gradient(darkgreen, rgb(13, 44, 13));
   display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
   align-items: center;
-  height: 150px;
   background-color: darkgreen;
-  border: 1px solid black;
+  border: 1px solid aqua;
+  border-radius: 5px;
 }
 
 #button-roll {
   border-radius: 5px;
   font-weight: bold;
-  background-color: darkslateblue;
+  height: 70px;
+  width: 70px;
+  background-color: dodgerblue;
   color: aqua;
+  margin: 30px;
+  opacity: 80%;
+}
+#button-roll:hover {
+  opacity: 100%;
 }
 .result-box {
-  background-color: cornflowerblue;
+  color: aliceblue;
+  position: relative;
+  left: -30%;
+  align-self: flex-end;
+}
+strong {
+  color: gold;
 }
 .container {
   display: flex;

@@ -6,7 +6,7 @@ document.addEventListener('click', (e) => {
       diceValue = roll();
       el.dataset.value = diceValue;
       elClass = numToCssClass(+diceValue);
-      console.log(diceValue);
+      el.classList.toggle('dice-rotate');
       Array.from(el.getElementsByTagName('div')).forEach((div) => {
         div.classList.remove(
           'one',
