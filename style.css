@@ -33,14 +33,15 @@ main {
   height: 15px;
   border-radius: 50%;
   place-self: center;
+  visibility: hidden;
 }
 #dice-container {
+  background-image: radial-gradient(rgb(13, 44, 13), darkgreen);
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  /* width: 200px;
-  height: 100px; */
+  height: 150px;
   background-color: darkgreen;
   border: 1px solid black;
 }
@@ -57,6 +58,33 @@ main {
 .container {
   display: flex;
 }
-.dice-point:nth-child(2n-4) {
-  visibility: hidden;
+.one:nth-child(5) {
+  visibility: visible;
+}
+.two:nth-child(4n + 3) {
+  visibility: visible;
+}
+.three:nth-child(4n + 1) {
+  /* three */
+  visibility: visible;
+}
+.four:nth-child(6n + 3) {
+  /* four-1 */
+  visibility: visible;
+}
+.four:nth-child(6n + 1) {
+  /* four-2 */
+  visibility: visible;
+}
+.five:nth-child(odd) {
+  /* five */
+  visibility: visible;
+}
+.six:nth-child(3n + 1) {
+  /* six-1 */
+  visibility: visible;
+}
+.six:nth-child(3n + 3) {
+  /* six-2 */
+  visibility: visible;
 }
