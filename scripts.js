@@ -7,7 +7,6 @@ document.addEventListener('click', (e) => {
       el.classList.remove('1', '2', '3', '4', '5', '6');
       el.classList.toggle(`${el.textContent}`);
     });
-    // console.log(calculateScore());
     resultBox.innerHTML = `You got <strong>${calculateScore()}</strong> points!`;
   }
 });

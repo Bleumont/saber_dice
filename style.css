@@ -13,21 +13,34 @@ main {
   flex-direction: column;
 }
 .dice {
-  width: 40px;
-  height: 40px;
-  border: 1px solid;
+  width: 60px;
+  height: 60px;
+  border: 2px solid;
   margin: 5px;
+  padding: 3px;
   border-radius: 5px;
   box-shadow: darkcyan;
   background-color: whitesmoke;
+  display: grid;
+  grid-template:
+    [row1-start] 'dice1 dice2 dice3' [row1-end]
+    [row2-start] 'dice4 dice5 dice6' [row2-end]
+    [row3-start] 'dice7 dice8 dice9' [row3-end];
 }
-
+.dice-point {
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  place-self: center;
+}
 #dice-container {
   display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 100px;
+  /* width: 200px;
+  height: 100px; */
   background-color: darkgreen;
   border: 1px solid black;
 }
@@ -43,4 +56,7 @@ main {
 }
 .container {
   display: flex;
+}
+.dice-point:nth-child(2n-4) {
+  visibility: hidden;
 }
